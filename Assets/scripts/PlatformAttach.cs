@@ -5,17 +5,17 @@ public class PlatformAttach : MonoBehaviour
 
     public GameObject Player;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-        if (other.tag == "Player")
+        if (col.tag == "Player")
         {
             Player.transform.parent = transform;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider col)
     {
-        if (other.tag == "Player")
+        if (col.tag == "Player")
         {
             Player.transform.parent = null;
         }

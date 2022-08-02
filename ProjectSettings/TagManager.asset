@@ -9,11 +9,12 @@ TagManager:
   - endlevel
   - coin
   - bullet
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

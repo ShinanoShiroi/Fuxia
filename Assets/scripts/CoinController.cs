@@ -3,7 +3,6 @@
 
 public class CoinController : MonoBehaviour
 {
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "coin")

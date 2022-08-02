@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class respawn : MonoBehaviour
 {
+    [SerializeField] private Transform player;
 
     private Vector3 startPosition;
     private Quaternion startRotation;
@@ -27,14 +28,13 @@ public class respawn : MonoBehaviour
     {
         if (col.tag == "death")
         {
-            transform.position = startPosition;
-            transform.rotation = startRotation;
+            player.transform.position = startPosition;
+            player.transform.rotation = startRotation;
+            Physics.SyncTransforms();
 
+            Debug.Log("Fall!");
 
             AudioManager.instance.Play("PlayerVoidFall");
-            GetComponent<Animator>().Play("LOSE00", -1, 0f);
-            GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
-            GetComponent<Rigidbody>().angularVelocity = new Vector3(0f, 0f, 0f);
 
         }
         else if (col.tag == "checkpoint")
